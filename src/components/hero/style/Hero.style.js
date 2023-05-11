@@ -37,6 +37,7 @@ export const Hero = styled.div`
 
 export const HeroTitle = styled.h1`
   color: #7c01ff;
+  text-shadow: rgba(0,0,0,0.3) 0.1em 0.1em 0.2em;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -47,8 +48,10 @@ export const HeroTitle = styled.h1`
 
 export const SellButton = styled.button`
   background-color: #7c01ff;
+  box-shadow: rgba(0,0,0,0.3) 0.1em 0.1em 0.2em;
+  font-family: Roboto;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.5rem;

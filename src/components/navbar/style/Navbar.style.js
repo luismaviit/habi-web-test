@@ -26,6 +26,27 @@ export const NavLinks = styled.ul`
   list-style: none;
 `;
 
-export const NavLink = styled.li`
+export const NavLink = styled.div`
+  color: ${({ isHighlighted }) => (isHighlighted ? 'rgb(124, 1, 255)' : '#333')};
   cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: ${({ isHighlighted }) => (isHighlighted ? 'rgb(124, 1, 255)' : 'transparent')};
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    color: rgb(124, 1, 255);
+
+    &::after {
+      background-color: rgb(124, 1, 255);
+    }
+  }
 `;

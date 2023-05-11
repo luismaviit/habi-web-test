@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { NavbarWrapper, Logo, NavLinks, NavLink } from "./style/Navbar.style";
 
 const NAV_ITEMS = [
-  { label: "Vender", path: "/vender" },
+  { id: 3, label: 'Vender', isHighlighted: true, path: "/vender" },
   { label: "Comprar", path: "/comprar" },
-  { label: "Cómo comprar", path: "/como-comprar" },
+  { label: "¿Cómo comprar?", path: "/como-comprar" },
   { label: "Habímetro", path: "/habimetro" },
 ];
 
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    if (scrollPosition > (90 * window.innerHeight) / 100) {
+    if (scrollPosition > (10 * window.innerHeight) / 100) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
       />
       <NavLinks>
         {NAV_ITEMS.map((item, index) => (
-          <NavLink key={index}>{item.label}</NavLink>
+          <NavLink key={index} isHighlighted={item.isHighlighted}>{item.label}</NavLink>
         ))}
       </NavLinks>
     </NavbarWrapper>

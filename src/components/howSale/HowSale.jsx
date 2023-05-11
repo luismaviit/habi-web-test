@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 import {
   HowSaleSection,
+  SubTitle,
   Title,
   Content,
   ImageWrapper,
   Image,
   ItemsWrapper,
   Item,
-} from './style/HowSale.style';
-
-const ITEMS = [
-  // Tus items a mapear, por ejemplo:
-  { id: 1, text: 'Item 1' },
-  { id: 2, text: 'Item 2' },
-  { id: 3, text: 'Item 3' },
-];
+  IconWrapper,
+  TextWrapper,
+  TextTittle,
+  SubText,
+} from "./style/HowSale.style";
+import ITEMS from "./const/items";
 
 const HowSale = () => {
   return (
     <HowSaleSection>
+      <SubTitle> ¿Quieres vender?</SubTitle>
       <Title>Así funciona el proceso</Title>
       <Content>
         <ImageWrapper>
@@ -29,7 +29,15 @@ const HowSale = () => {
         </ImageWrapper>
         <ItemsWrapper>
           {ITEMS.map((item) => (
-            <Item key={item.id}>{item.text}</Item>
+            <Item key={item.id}>
+              <IconWrapper>
+                <img src={item.icon} alt="icon" />
+              </IconWrapper>
+              <TextWrapper>
+                <TextTittle>{item.text}</TextTittle>
+                <SubText>{item.subtext}</SubText>
+              </TextWrapper>
+            </Item>
           ))}
         </ItemsWrapper>
       </Content>
