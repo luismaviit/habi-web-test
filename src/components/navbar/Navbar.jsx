@@ -1,8 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { NavbarWrapper, Logo, NavLinks, NavLink } from "./style/Navbar.style";
+import React, { useState, useEffect } from "react";
+import {
+  Backdrop,
+  MobileMenu,
+  MobileMenuItem,
+  HamburgerMenu,
+  NavbarWrapper,
+  ContentNav,
+  Logo,
+  NavLinks,
+  NavLink,
+} from "./style/Navbar.style";
 
 const NAV_ITEMS = [
-  { id: 3, label: 'Vender', isHighlighted: true, path: "/vender" },
+  { id: 3, label: "Vender", isHighlighted: true, path: "/vender" },
   { label: "Comprar", path: "/comprar" },
   { label: "¿Cómo comprar?", path: "/como-comprar" },
   { label: "Habímetro", path: "/habimetro" },
@@ -10,6 +20,11 @@ const NAV_ITEMS = [
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -28,17 +43,36 @@ const Navbar = () => {
   }, []);
 
   return (
-    <NavbarWrapper scrolled={scrolled}>
-      <Logo
-        src="https://s4-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/524/000/original/habi-morado.png?1642725015"
-        alt="Habi logo"
-      />
-      <NavLinks>
+    <>
+      <NavbarWrapper scrolled={scrolled}>
+        <ContentNav>
+          <Logo
+            src="https://s4-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/524/000/original/habi-morado.png?1642725015"
+            alt="Habi logo"
+          />
+          <NavLinks>
+            {NAV_ITEMS.map((item, index) => (
+              <NavLink key={index} isHighlighted={item.isHighlighted}>
+                {item.label}
+              </NavLink>
+            ))}
+          </NavLinks>
+          <HamburgerMenu onClick={toggleMobileMenu}>
+            <div />
+            <div />
+            <div />
+          </HamburgerMenu>
+        </ContentNav>
+      </NavbarWrapper>
+      <Backdrop isOpen={isMobileMenuOpen} onClick={toggleMobileMenu} />
+      <MobileMenu isOpen={isMobileMenuOpen}>
         {NAV_ITEMS.map((item, index) => (
-          <NavLink key={index} isHighlighted={item.isHighlighted}>{item.label}</NavLink>
+          <MobileMenuItem key={index} isHighlighted={item.isHighlighted}>
+            {item.label}
+          </MobileMenuItem>
         ))}
-      </NavLinks>
-    </NavbarWrapper>
+      </MobileMenu>
+    </>
   );
 };
 
