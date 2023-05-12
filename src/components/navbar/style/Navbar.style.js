@@ -52,7 +52,6 @@ align-items: center;
 
 
 `
-
 export const Logo = styled.img`
   height: 50px;
   margin-right: 25px;

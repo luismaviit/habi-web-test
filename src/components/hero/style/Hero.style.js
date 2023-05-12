@@ -25,9 +25,7 @@ export const Hero = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  min-width: 100%;
+  justify-content: space-around; 
   height: 100vh;
   padding: 2rem;
   opacity: 0;
