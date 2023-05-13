@@ -13,5 +13,5 @@ export const Banner = styled.section`
 `;
 
 export const HowSaleWrapper = styled.section`
-   
+   background-color:#F6fcff;
 `;
