@@ -6,22 +6,22 @@ export const WrapperSales = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-  padding: 100px;
+  
  
 `
 export const Nav = styled.nav`
-  grid-column: 1 / 5;
+  grid-column: 1 / 4;
   grid-auto-rows: minmax(100px, auto);
   backdrop-filter: blur(10px); 
   border-radius: 10px;
   //background-color: rgba(0, 0, 0, 0.2); 
   display: flex;
-  padding: 15px;
+  padding: 5px;
 
 `
 
 export const Logo = styled.img`
-  height: 70px;
+  height: 50px;
   margin-right: 35px;
   align-self: center;
   z-index: 1000;
@@ -30,13 +30,15 @@ export const Logo = styled.img`
 
 export const WrapperForm = styled.div`
   grid-column: 1/4;
-  grid-row: 2/7;
+  grid-row: 2/8;
   backdrop-filter: blur(10px); 
-  border-radius: 10px;
-  box-shadow: rgba(124, 1, 225, 0.2) 0px 0px 16px;
-  background-color: rgba(0, 0, 0, 0.1); 
+  //box-shadow: rgba(124, 1, 225, 0.2) 0px 0px 16px;
+  //background-color: rgba(0, 0, 0, 0.1); 
   backdrop-filter: blur(10px); 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px;
   @media ${breakpoint.desktop} {
     grid-column: 1/5;
@@ -46,16 +48,17 @@ export const WrapperForm = styled.div`
 
 export const WrapperResume = styled.div`
   grid-column: 4/4;
-  grid-row: 2/7;
+  grid-row: 1/8;
+  height: 100vh;
   backdrop-filter: blur(10px); 
-  border-radius: 10px;
-  box-shadow: rgba(124, 1, 225, 0.2) 0px 0px 16px;
+  box-shadow: rgba(124, 1, 225, 0.2) 0px 0px 10px;
   background-color: rgba(0, 0, 0, 0.1); 
   backdrop-filter: blur(10px); 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 15px;
+  box-sizing: border-box;
 
   @media ${breakpoint.desktop} {
     display: none;
@@ -64,12 +67,16 @@ export const WrapperResume = styled.div`
 
 
 `;
+export const Wrapper = styled.div`
+`
+
 export const TittleResume = styled.div`
+color: #7c01ff;
 font-size: 30px;
 display: flex;
 align-items: center;
 justify-content: flex-start;
-font-weight: bold;
+font-weight: 300;
 justify-content: center;
 `
 

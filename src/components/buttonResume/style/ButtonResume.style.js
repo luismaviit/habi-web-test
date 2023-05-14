@@ -18,7 +18,7 @@ export const Button = styled.button`
   transition: background-color 0.3s ease;
   position: fixed;
   bottom: 20px;  
-  right: 100px; 
+  right: 20px; 
 
   &:hover {
     background-color: rgba(124, 1, 225, 1)

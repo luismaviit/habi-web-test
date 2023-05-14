@@ -1,6 +1,6 @@
 import React from "react";
-import DescriptionIcon from '@mui/icons-material/Description';
-import Stepper from "../../components/stepper/Stepper";
+import DescriptionIcon from "@mui/icons-material/Description";
+import Form from "../../components/form/Form";
 import ButtonResume from "../../components/buttonResume/ButtonResume";
 import {
   WrapperSales,
@@ -10,7 +10,9 @@ import {
   TittleResume,
   WrapperResume,
 } from "./style/Sales.style";
-
+import ProgressBar from "../../components/progressBar/ProgressBar";
+import ButtonStepper from "../../components/buttonStepper/ButtonStepper";
+import { Paths } from "../../const/paths";
 function Sales() {
   return (
     <WrapperSales>
@@ -20,15 +22,19 @@ function Sales() {
           alt="Habi logo"
         />
       </Nav>
-      <WrapperForm>Formulario</WrapperForm>
+      <WrapperForm>
+        <ProgressBar progress={10} />
+        <Form/>
+        <ButtonStepper />
+      </WrapperForm>
       <WrapperResume>
         <TittleResume>
-          {" "}
           <DescriptionIcon fontSize="large" />
           Resumen
         </TittleResume>
+        
       </WrapperResume>
-      <ButtonResume/>
+      <ButtonResume />
     </WrapperSales>
   );
 }
