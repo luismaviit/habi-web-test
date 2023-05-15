@@ -31,14 +31,8 @@ export const Logo = styled.img`
 export const WrapperForm = styled.div`
   grid-column: 1/4;
   grid-row: 2/8;
+  backdrop-filter: blur(10px);  
   backdrop-filter: blur(10px); 
-  //box-shadow: rgba(124, 1, 225, 0.2) 0px 0px 16px;
-  //background-color: rgba(0, 0, 0, 0.1); 
-  backdrop-filter: blur(10px); 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   padding: 15px;
   @media ${breakpoint.desktop} {
     grid-column: 1/5;
@@ -59,6 +53,7 @@ export const WrapperResume = styled.div`
   justify-content: flex-start;
   padding: 15px;
   box-sizing: border-box;
+  gap: 2rem;
 
   @media ${breakpoint.desktop} {
     display: none;

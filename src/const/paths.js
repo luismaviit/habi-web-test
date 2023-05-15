@@ -8,7 +8,7 @@ import Parking from '../components/steps/parking/Parking';
 import Uploadimg from '../components/steps/uploadimg/Uploadimg';
 import Price from '../components/steps/price/Price';
 import Elevator from '../components/steps/elevator/Elevator';
-import Resumen from '../components/steps/resumen/resumen';
+import Resumen from '../components/steps/resumen/Resumen';
 //icons
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
@@ -51,7 +51,7 @@ export const Paths = [
         visible: true,
         descripcion: "Agrege su dirrecion completa en el siguiente campo , Ej: Calle falsa #12 -3, Apto 1209",
         icon: LocationOnOutlinedIcon,
-        next: "/numero-pisos",
+        next: "/numero-piso",
         prev: "/email"
     },
     {
@@ -88,8 +88,8 @@ export const Paths = [
         visible: true,
         descripcion: "Su predio posee parqueadero?",
         icon: LocalParkingIcon,
-        next: "monto-venta",
-        prev: "/numero-pisos"
+        next: "/monto-venta",
+        prev: "/beneficios"
     }, {
         path: "/monto-venta",
         component: Price,
@@ -99,8 +99,8 @@ export const Paths = [
         visible: true,
         descripcion: "Por favor ingrese el monto de venta de su predio",
         icon: LocalAtmOutlinedIcon,
-        next: "subir-foto",
-        prev: "/numero-pisos"
+        next: "/subir-foto",
+        prev: "/parqueadero"
     }, {
         path: "/subir-foto",
         component: Uploadimg,
@@ -110,7 +110,7 @@ export const Paths = [
         visible: true,
         descripcion: "Por favor suba una foto de su predio",
         icon: CloudUploadOutlinedIcon,
-        next: null,
+        next: "/ascensor",
         prev: "/monto-venta"
     },{
         path: "/ascensor",
@@ -121,7 +121,7 @@ export const Paths = [
         visible: true,
         descripcion: "Su predio posee ascensor?",
         icon: CloudUploadOutlinedIcon,
-        next: null,
+        next: "/resumen",
         prev: "/monto-venta"
     },
     {
@@ -131,7 +131,7 @@ export const Paths = [
         code: "Paso 10",
         nameState: "resumen",
         visible: true,
-        descripcion: "Muchas gracias por brindarnos tu información, nos estaremos comunicando contigo para agendar una reuniono y poder seguir con el proceso",
+        descripcion: "Muchas gracias por brindarnos tu información, nos estaremos comunicando contigo para agendar una reunion y poder seguir con el proceso",
         icon: CloudUploadOutlinedIcon,
         next: null,
         prev: "/monto-venta"

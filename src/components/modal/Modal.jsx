@@ -7,7 +7,7 @@ import {
   ModalBackground,
   ModalContent,
 } from "./style/Modal.style";
-const Modal = ({ isOpen, onClose, children }) => {
+function Modal  ({ isOpen, onClose, children }) {
   const [render, setRender] = useState(false);
 
   useEffect(() => {
@@ -45,6 +45,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             }}
             edge="end"
           >
+            Resumen
             <CloseIcon />
           </IconButton>
         </ModalNavbar>

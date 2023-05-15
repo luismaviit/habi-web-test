@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Form from "../../components/form/Form";
 import ButtonResume from "../../components/buttonResume/ButtonResume";
@@ -11,9 +11,11 @@ import {
   WrapperResume,
 } from "./style/Sales.style";
 import ProgressBar from "../../components/progressBar/ProgressBar";
-import ButtonStepper from "../../components/buttonStepper/ButtonStepper";
-import { Paths } from "../../const/paths";
+import { AuthContext } from "../../context/AuthContext";
+import ContentResumen from "../../components/contentResumen/ContentResumen";
 function Sales() {
+  const { progress } = React.useContext(AuthContext);
+
   return (
     <WrapperSales>
       <Nav>
@@ -23,16 +25,15 @@ function Sales() {
         />
       </Nav>
       <WrapperForm>
-        <ProgressBar progress={10} />
-        <Form/>
-        <ButtonStepper />
+        <ProgressBar progress={parseInt(progress)} />
+        <Form />
       </WrapperForm>
       <WrapperResume>
         <TittleResume>
           <DescriptionIcon fontSize="large" />
           Resumen
         </TittleResume>
-        
+        <ContentResumen/>
       </WrapperResume>
       <ButtonResume />
     </WrapperSales>

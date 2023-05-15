@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+display: flex;
+align-items: center;
+justify-content: center;
 color: white;
-width: 504px;
+width: 304px;
 height: 48px;
 border-radius: 50px;
 border: none;
 background-color: rgb(124, 1, 255);
+align-self:flex-end;
 cursor: pointer;
-&:hover {
-    background-color: #5e019d;
-   
-  }
+
+padding-right: 0;
+
 `

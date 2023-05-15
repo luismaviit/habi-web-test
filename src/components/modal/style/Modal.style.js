@@ -8,7 +8,7 @@ export const ModalNavbar = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: #2eb142;
+  background-color: #7c01ff;;
   border-radius: 8px 8px 0 0;
   padding: 0 1rem;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
