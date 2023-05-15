@@ -1,7 +1,7 @@
 
 # :computer: Habi Web Test
 
-![plot](./src/assets/habi.PNG)
+![plot](./src/assets/habi.png)
 
 ## :memo: Instrucciones.
 
