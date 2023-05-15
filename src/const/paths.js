@@ -112,7 +112,7 @@ export const Paths = [
         icon: CloudUploadOutlinedIcon,
         next: "/ascensor",
         prev: "/monto-venta"
-    },{
+    }, {
         path: "/ascensor",
         component: Elevator,
         name: "Ascensor",
