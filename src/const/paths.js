@@ -8,7 +8,7 @@ import Parking from '../components/steps/parking/Parking';
 import Uploadimg from '../components/steps/uploadimg/Uploadimg';
 import Price from '../components/steps/price/Price';
 import Elevator from '../components/steps/elevator/Elevator';
-import Resumen from '../components/steps/resumen/Resumen';
+import Resume from '../components/steps/resumen/Resumen';
 //icons
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
@@ -130,7 +130,7 @@ export const Paths = [
     },
     {
         path: "/resumen",
-        component: Resumen,
+        component: Resume,
         name: "Resumen",
         code: "",
         nameState: "resumen",
