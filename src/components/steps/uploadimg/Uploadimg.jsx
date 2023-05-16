@@ -1,17 +1,17 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   WrapperForm,
   TittleForm,
   ContentForm,
   InputForm,
   WrapperInputForm,
-  InputFormImg
+  InputFormImg,
+  WrapperInputFormImg,
 } from "../style/StepsGlobal.style";
 import ButtonStepper from "../../buttonStepper/ButtonStepper";
 import { useNavigate } from "react-router-dom";
-import { validationPrice } from "../../../const/validations"
+import { validationPrice } from "../../../const/validations";
 function Uploadimg({ data }) {
-
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -30,7 +30,11 @@ function Uploadimg({ data }) {
       setError("Por favor selecciona un archivo tipo img (png or jpg)");
     }
   };
-
+  React.useEffect(() => {
+     if(previewUrl !== null){
+      localStorage.setItem("img", "Cargada correctamente");
+     }
+  }, [previewUrl]);
   return (
     <WrapperForm>
       <TittleForm>
@@ -38,12 +42,20 @@ function Uploadimg({ data }) {
       </TittleForm>
       <ContentForm>{data.descripcion}</ContentForm>
       <WrapperInputForm>
-        <InputFormImg backgroundimg={previewUrl} type="file" onChange={handleImageUpload}/>
-        {error && <div>{error}</div>}
-      {file && <div>{file.name}</div>}
-      {previewUrl && <img src={previewUrl} alt="Preview" width="200" />}
+        <WrapperInputFormImg>
+          <InputFormImg
+            type="file"
+            onChange={handleImageUpload}
+          />
+          {error && <div>{error}</div>}
+          {file && <div>{file.name}</div>}
+          <div>
+            {" "}
+            {previewUrl && <img src={previewUrl} alt="Preview" width="350" />}
+          </div>
+        </WrapperInputFormImg>
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper active={!error} next={data.next} />
     </WrapperForm>
   );
 }

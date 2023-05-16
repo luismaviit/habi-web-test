@@ -45,9 +45,10 @@ function Modal  ({ isOpen, onClose, children }) {
             }}
             edge="end"
           >
-            Resumen
+           
             <CloseIcon />
           </IconButton>
+          Resumen
         </ModalNavbar>
         {children}
       </ModalContent>

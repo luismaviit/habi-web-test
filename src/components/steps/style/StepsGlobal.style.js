@@ -34,6 +34,11 @@ flex-direction: column;
 color: rgba(109, 105, 112, 0.5);
 gap: 1rem;
 `
+
+export const WrapperInputFormImg = styled.div`
+display: flex;
+flex-direction: row;
+`
 export const InputFormImg = styled.input`
 height: 200px;
 width: 200px;

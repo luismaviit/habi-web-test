@@ -9,14 +9,24 @@ import {
 } from "../style/StepsGlobal.style";
 import ButtonStepper from "../../buttonStepper/ButtonStepper";
 import { useNavigate } from "react-router-dom";
-import { validationNumber } from "../../../const/validations";
 
 function Perks({ data }) {
-  const perks = ["Zona BBQ", "Salon comunal", "parque de juegos"]
-  const [error, setError] = React.useState(false);
-  const navigate = useNavigate();
-  const validation = (event) => {
-    setError(validationNumber(event.target.value));
+  const perks = ["Zona BBQ", "Salon comunal", "parque de juegos"];
+  const [optionSelected, setOptionSelected] = React.useState(
+    perks.reduce((obj, perk) => ({ ...obj, [perk]: false }), {})
+  );
+  
+  React.useEffect(() => {
+    const selectedPerks = Object.keys(optionSelected).filter(
+      (perk) => optionSelected[perk]
+    );
+    const lastPerk = selectedPerks.pop();
+    const perksString = [selectedPerks.join(', '), lastPerk].filter(Boolean).join(' y ');
+    localStorage.setItem("perks", perksString);
+  }, [optionSelected]);
+
+  const handleSwitchChange = (perk) => {
+    setOptionSelected((prev) => ({ ...prev, [perk]: !prev[perk] }));
   };
 
   return (
@@ -30,7 +40,12 @@ function Perks({ data }) {
           <WrapperSwitch key={index}>
             <StyledSwitch>
               <label className="switch" htmlFor={`checkbox-${index}`}>
-                <input type="checkbox" id={`checkbox-${index}`} />
+                <input
+                  type="checkbox"
+                  id={`checkbox-${index}`}
+                  checked={optionSelected[perk]}
+                  onChange={() => handleSwitchChange(perk)}
+                />
                 <div className="slider round"></div>
               </label>
             </StyledSwitch>

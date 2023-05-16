@@ -22,7 +22,7 @@ function Resumen({ data }) {
   return (
     <WrapperForm>
       <TittleForm>
-        {data.code} de 10 : {data.name}
+        {data.code}  {data.name}
       </TittleForm>
       <ContentForm>{data.descripcion}</ContentForm>
      

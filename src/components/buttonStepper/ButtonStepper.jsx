@@ -13,7 +13,7 @@ function ButtonStepper({ next, active }) {
   const navigate = useNavigate();
   return (
     <Button disabled={!active} onClick={() => validations()}>
-      Sigamos <ArrowForwardOutlinedIcon />{" "}
+      Sigamos <ArrowForwardOutlinedIcon />
     </Button>
   );
 }

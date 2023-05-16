@@ -10,13 +10,23 @@ import {
 import ButtonStepper from "../../buttonStepper/ButtonStepper";
 import { useNavigate } from "react-router-dom";
 
-
 function Parking({ data }) {
-  const [error, setError] = React.useState(false);
-  const navigate = useNavigate();
-  const validation = (event) => {
-    setError(event.target.checked)
-    console.log(event.target.checked)
+  const [optionSelected, setOptionSelected] = React.useState({ 
+    "Posee parqueadero": false, 
+    "es cubierto": false 
+  });
+  
+  React.useEffect(() => {
+    const selectedOptions = Object.keys(optionSelected).filter(
+      (option) => optionSelected[option]
+    );
+    const lastOption = selectedOptions.pop();
+    const optionsString = [selectedOptions.join(', '), lastOption].filter(Boolean).join(' y ');
+    localStorage.setItem("parking", optionsString);
+  }, [optionSelected]);
+
+  const handleSwitchChange = (option) => {
+    setOptionSelected((prev) => ({ ...prev, [option]: !prev[option] }));
   };
 
   return (
@@ -29,21 +39,31 @@ function Parking({ data }) {
        
           <WrapperSwitch >
             <StyledSwitch>
-              <label className="switch" htmlFor="checkbox">
-                <input type="checkbox" id="checkbox" onChange={validation}/>
+              <label className="switch" htmlFor="checkbox-parking">
+                <input 
+                  type="checkbox" 
+                  id="checkbox-parking" 
+                  onChange={() => handleSwitchChange("Posee parqueadero")}
+                  checked={optionSelected["Posee parqueadero"]}
+                />
                 <div className="slider round"></div>
               </label>
             </StyledSwitch>
             Posee parqueadero
           </WrapperSwitch>
-          {error ? (<WrapperSwitch >
+          {optionSelected["Posee parqueadero"] ? (<WrapperSwitch >
             <StyledSwitch>
-              <label className="switch" htmlFor="checkbox">
-                <input type="checkbox" />
+              <label className="switch" htmlFor="checkbox-covered">
+                <input 
+                  type="checkbox"
+                  id="checkbox-covered" 
+                  onChange={() => handleSwitchChange("Es cubierto")}
+                  checked={optionSelected["Es cubierto"]}
+                />
                 <div className="slider round"></div>
               </label>
             </StyledSwitch>
-            Es cubierto
+            es cubierto
           </WrapperSwitch>):null}
     
       </WrapperInputForm>

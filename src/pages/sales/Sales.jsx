@@ -30,7 +30,7 @@ function Sales() {
       </WrapperForm>
       <WrapperResume>
         <TittleResume>
-          <DescriptionIcon fontSize="large" />
+          
           Resumen
         </TittleResume>
         <ContentResumen/>

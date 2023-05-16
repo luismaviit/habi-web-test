@@ -7,16 +7,17 @@ import {
   WrapperInputForm,
 } from "../style/StepsGlobal.style";
 import ButtonStepper from "../../buttonStepper/ButtonStepper";
-import { useNavigate } from "react-router-dom";
 import { validationNumber } from "../../../const/validations"
 function Floors({ data }) {
-
+  const [floor, setFloor] = React.useState("");
   const [error, setError] = React.useState(false)
-  const navigate = useNavigate();
   const validation= (event)=>{
     setError(validationNumber(event.target.value))
-    
+    setFloor(event.target.value)
   }
+  React.useEffect(() => {
+    localStorage.setItem("floor", floor);
+  }, [floor]);
 
   return (
     <WrapperForm>
@@ -25,7 +26,7 @@ function Floors({ data }) {
       </TittleForm>
       <ContentForm>{data.descripcion}</ContentForm>
       <WrapperInputForm>
-        <InputForm onChange={validation} type="email"/>
+        <InputForm onChange={validation} type="number" value={floor}/>
         {error ? "Piso correcto, puedes continuar" : "Piso inválido"}
       </WrapperInputForm>
       <ButtonStepper active={error} next={data.next} />

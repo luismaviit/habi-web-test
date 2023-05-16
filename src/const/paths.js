@@ -18,13 +18,17 @@ import DomainAddOutlinedIcon from '@mui/icons-material/DomainAddOutlined';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
+import ElevatorOutlinedIcon from '@mui/icons-material/ElevatorOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+
+
 export const Paths = [
 
     {
         path: "/datos-cliente",
         component: Name,
         name: "Datos del cliente",
-        nameState: "names",
+        nameState: "name",
         code: "Paso 1",
         descripcion: "Agrege su nombre completo en el siguiente campo, Ej: Peter Gregory.",
         icon: PersonOutlinedIcon,
@@ -104,9 +108,9 @@ export const Paths = [
     }, {
         path: "/subir-foto",
         component: Uploadimg,
-        name: "Monto de venta",
+        name: "Foto del predio",
         code: "Paso 8",
-        nameState: "price",
+        nameState: "img",
         visible: true,
         descripcion: "Por favor suba una foto de su predio",
         icon: CloudUploadOutlinedIcon,
@@ -117,10 +121,10 @@ export const Paths = [
         component: Elevator,
         name: "Ascensor",
         code: "Paso 9",
-        nameState: "price",
+        nameState: "elevator",
         visible: true,
         descripcion: "Su predio posee ascensor?",
-        icon: CloudUploadOutlinedIcon,
+        icon: ElevatorOutlinedIcon,
         next: "/resumen",
         prev: "/monto-venta"
     },
@@ -128,11 +132,11 @@ export const Paths = [
         path: "/resumen",
         component: Resumen,
         name: "Resumen",
-        code: "Paso 10",
+        code: "",
         nameState: "resumen",
         visible: true,
         descripcion: "Muchas gracias por brindarnos tu información, nos estaremos comunicando contigo para agendar una reunion y poder seguir con el proceso",
-        icon: CloudUploadOutlinedIcon,
+        icon: DescriptionOutlinedIcon,
         next: null,
         prev: "/monto-venta"
     },

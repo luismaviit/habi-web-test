@@ -7,15 +7,18 @@ import {
   WrapperInputForm,
 } from "../style/StepsGlobal.style";
 import ButtonStepper from "../../buttonStepper/ButtonStepper";
-import { useNavigate } from "react-router-dom";
 import { validationAddress } from "../../../const/validations"
 function Address({ data }) {
   const [error, setError] = React.useState(false)
-  const navigate = useNavigate();
+  const [address, setAddress] = React.useState("");
+  
   const validation= (event)=>{
     setError(validationAddress(event.target.value))
-    
+    setAddress(event.target.value)
   }
+  React.useEffect(() => {
+    localStorage.setItem("address", address);
+  }, [address]);
 
   return (
     <WrapperForm>

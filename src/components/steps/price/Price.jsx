@@ -7,16 +7,17 @@ import {
   WrapperInputForm,
 } from "../style/StepsGlobal.style";
 import ButtonStepper from "../../buttonStepper/ButtonStepper";
-import { useNavigate } from "react-router-dom";
 import { validationPrice } from "../../../const/validations"
 function Price({ data }) {
-
-  const [error, setError] = React.useState(false)
-  const navigate = useNavigate();
+  const [error, setError] = React.useState(false);
+  const [price, setPrice] = React.useState("");
   const validation= (event)=>{
     setError(validationPrice(event.target.value))
-    
+    setPrice(event.target.value)
   }
+  React.useEffect(() => {
+    localStorage.setItem("price", price);
+  }, [price]);
 
   return (
     <WrapperForm>
@@ -28,7 +29,7 @@ function Price({ data }) {
         <InputForm onChange={validation} type="number"/>
         {error ? "Precio proyectado correcto, puedes continuar" : "El precio proyectado no puede ser menor a 1 millón de pesos"}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper active={error} next={data.next} value={price}/>
     </WrapperForm>
   );
 }
