@@ -32,8 +32,7 @@ function Name({ data }) {
         <InputForm
           onChange={validation}
           type="text"
-          value={name}
-          defaultValue={localStorage.getItem("name")}
+          value={name}          
         />
         {error ? "Nombre correcto, puedes continuar" : "Nombre inválido"}
       </WrapperInputForm>

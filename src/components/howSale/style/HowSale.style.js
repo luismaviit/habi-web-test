@@ -160,7 +160,7 @@ export const IconWrapper = styled.div`
   
 `;
 
-export const TextWrapper = styled.h3`
+export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
