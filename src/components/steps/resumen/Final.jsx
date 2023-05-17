@@ -11,7 +11,7 @@ import ButtonStepper from "../../buttonStepper/ButtonStepper";
 import { useNavigate } from "react-router-dom";
 import { validationNumber } from "../../../const/validations";
 
-function Resumen({ data }) {
+function Final({ data }) {
   const perks = ["Posee eleveador"]
   const [error, setError] = React.useState(false);
   const navigate = useNavigate();
@@ -31,4 +31,4 @@ function Resumen({ data }) {
   );
 }
 
-export default Resumen;
+export default Final;
