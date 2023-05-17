@@ -1,4 +1,5 @@
 // Components
+import Beginning from '../components/steps/beginning/Beginning';
 import Name from '../components/steps/name/Name';
 import Email from '../components/steps/email/Email';
 import Address from '../components/steps/address/Address';
@@ -20,10 +21,22 @@ import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import ElevatorOutlinedIcon from '@mui/icons-material/ElevatorOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
+
 
 
 export const Paths = [
-
+    {
+        path: "/",
+        component: Beginning,
+        name: "Terminos y condiciones",
+        nameState: "beginning",
+        code: "",
+        descripcion: "Acontinuación encontrarás un formulario el cual llenaras con tus datos y los del predio, para continuar con el proceso debe aceptar los terminos y condiciones en el tratamiento de datos  ",
+        icon: AssignmentTurnedInOutlinedIcon,
+        next: "/email",
+        prev: null
+    },
     {
         path: "/datos-cliente",
         component: Name,
@@ -137,7 +150,7 @@ export const Paths = [
         visible: true,
         descripcion: "Muchas gracias por brindarnos tu información, nos estaremos comunicando contigo para agendar una reunion y poder seguir con el proceso",
         icon: DescriptionOutlinedIcon,
-        next: null,
+        next: { pathname: "/", fromSales: true },
         prev: "/monto-venta"
     },
 

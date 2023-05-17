@@ -29,11 +29,7 @@ function Name({ data }) {
       </TittleForm>
       <ContentForm>{data.descripcion}</ContentForm>
       <WrapperInputForm>
-        <InputForm
-          onChange={validation}
-          type="text"
-          value={name}          
-        />
+        <InputForm onChange={validation} type="text" value={name} />
         {error ? "Nombre correcto, puedes continuar" : "Nombre inválido"}
       </WrapperInputForm>
       <ButtonStepper active={error} next={data.next} />

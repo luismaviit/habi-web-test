@@ -7,13 +7,22 @@ function ButtonStepper({ next, active }) {
   const { setProgress, progress } = React.useContext(AuthContext);
 
   const validations = () => {
-    navigate(`/sales${next}`);
-    setProgress(progress + 10);
+    if (typeof next === "object") {
+      navigate(next.pathname);
+      setProgress(0);
+      localStorage.setItem("progress", 0);
+      localStorage.clear();
+    } else {
+      navigate(`/sales${next}`);
+      setProgress(progress + 10);
+    }
   };
+
   const navigate = useNavigate();
   return (
     <Button disabled={!active} onClick={() => validations()}>
-      Sigamos <ArrowForwardOutlinedIcon />
+      Sigamos
+      <ArrowForwardOutlinedIcon />
     </Button>
   );
 }
