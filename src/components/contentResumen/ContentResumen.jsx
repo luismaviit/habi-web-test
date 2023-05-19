@@ -12,9 +12,10 @@ function ContentResumen() {
       {Paths.map((path, index) => (
         <ListItem key={index}>
           <IconContainer>
-            <path.icon />
+            {path.nameState === "resumen" ? null : <path.icon />}
           </IconContainer>
-          <div>{path.name}:</div>
+         
+          {path.nameState === "resumen" ? null :  <div>{path.name}:</div>}
           <div>
             {localStorage.getItem(`${path.nameState}`) === null ||
             localStorage.getItem(`${path.nameState}`) === ""
@@ -22,11 +23,12 @@ function ContentResumen() {
               : localStorage.getItem(`${path.nameState}`)}
           </div>
           <div>
-          {localStorage.getItem(`${path.nameState}`) === null ||
-            localStorage.getItem(`${path.nameState}`) === ""
-              ?""
-              : <CheckCircleOutlinedIcon color="success" />}
-            
+            {localStorage.getItem(`${path.nameState}`) === null ||
+            localStorage.getItem(`${path.nameState}`) === "" ? (
+              ""
+            ) : (
+              <CheckCircleOutlinedIcon color="success" />
+            )}
           </div>
         </ListItem>
       ))}

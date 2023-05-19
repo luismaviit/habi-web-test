@@ -53,7 +53,7 @@ function Perks({ data }) {
           </WrapperSwitch>
         ))}
       </WrapperInputForm>
-      <ButtonStepper active={true} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={true} next={data.next} />
     </WrapperForm>
   );
 }

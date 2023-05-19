@@ -29,7 +29,7 @@ function Floors({ data }) {
         <InputForm onChange={validation} type="number" value={floor}/>
         {error ? "Piso correcto, puedes continuar" : "Piso inválido"}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={error} next={data.next} />
     </WrapperForm>
   );
 }

@@ -30,7 +30,7 @@ function Email({ data }) {
         <InputForm onChange={validation} type="email" value={email}/>
         {error ? "Correo correcto, puedes continuar" : "Correo inválido"}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={error} next={data.next} />
     </WrapperForm>
   );
 }

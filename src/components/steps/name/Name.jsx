@@ -32,7 +32,7 @@ function Name({ data }) {
         <InputForm onChange={validation} type="text" value={name} />
         {error ? "Nombre correcto, puedes continuar" : "Nombre inválido"}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={error} next={data.next} />
     </WrapperForm>
   );
 }

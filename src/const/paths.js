@@ -34,8 +34,9 @@ export const Paths = [
         code: "",
         descripcion: "Acontinuación encontrarás un formulario el cual llenaras con tus datos y los del predio, para continuar con el proceso debe aceptar los terminos y condiciones en el tratamiento de datos  ",
         icon: AssignmentTurnedInOutlinedIcon,
-        next: "/email",
-        prev: null
+        next: "/datos-cliente",
+        prev: null,
+        porcentageProgress:0
     },
     {
         path: "/datos-cliente",
@@ -46,7 +47,9 @@ export const Paths = [
         descripcion: "Agrege su nombre completo en el siguiente campo, Ej: Peter Gregory.",
         icon: PersonOutlinedIcon,
         next: "/email",
-        prev: null
+        prev: null,
+        porcentageProgress:10
+
     },
     {
         path: "/email",
@@ -57,7 +60,9 @@ export const Paths = [
         descripcion: "Agrege su correo electrónico en el siguiente campo, Ej: ejemplo@correo.com",
         icon: AlternateEmailOutlinedIcon,
         next: "/direccion-predio",
-        prev: "/datos-cliente"
+        prev: "/datos-cliente",
+        porcentageProgress:20
+
     },
     {
         path: "/direccion-predio",
@@ -69,7 +74,9 @@ export const Paths = [
         descripcion: "Agrege su dirrecion completa en el siguiente campo , Ej: Calle falsa #12 -3, Apto 1209",
         icon: LocationOnOutlinedIcon,
         next: "/numero-piso",
-        prev: "/email"
+        prev: "/email",
+        porcentageProgress:30
+
     },
     {
         path: "/numero-piso",
@@ -81,7 +88,9 @@ export const Paths = [
         descripcion: "Defina el número del piso en la que se encuentra el predio, Ej: Piso 12, (Nota: El máximo número del piso está limitado a 50)",
         icon: ApartmentOutlinedIcon,
         next: "/beneficios",
-        prev: "/direccion-predio"
+        prev: "/direccion-predio",
+        porcentageProgress:40
+
 
     },
     {
@@ -94,7 +103,9 @@ export const Paths = [
         descripcion: "Agrege los beneficios con los que cuenta el predio, Ej: Zona BBQ, Sálon comunal, Parques de juegos.",
         icon: DomainAddOutlinedIcon,
         next: "/parqueadero",
-        prev: "/numero-piso"
+        prev: "/numero-piso", 
+        porcentageProgress:50
+
     },
     {
         path: "/parqueadero",
@@ -106,7 +117,9 @@ export const Paths = [
         descripcion: "Su predio posee parqueadero?",
         icon: LocalParkingIcon,
         next: "/monto-venta",
-        prev: "/beneficios"
+        prev: "/beneficios",
+        porcentageProgress:60
+
     }, {
         path: "/monto-venta",
         component: Price,
@@ -117,7 +130,8 @@ export const Paths = [
         descripcion: "Por favor ingrese el monto de venta de su predio",
         icon: LocalAtmOutlinedIcon,
         next: "/subir-foto",
-        prev: "/parqueadero"
+        prev: "/parqueadero",
+        porcentageProgress:70
     }, {
         path: "/subir-foto",
         component: Uploadimg,
@@ -128,7 +142,9 @@ export const Paths = [
         descripcion: "Por favor suba una foto de su predio",
         icon: CloudUploadOutlinedIcon,
         next: "/ascensor",
-        prev: "/monto-venta"
+        prev: "/monto-venta",
+        porcentageProgress:80
+
     }, {
         path: "/ascensor",
         component: Elevator,
@@ -139,7 +155,9 @@ export const Paths = [
         descripcion: "Su predio posee ascensor?",
         icon: ElevatorOutlinedIcon,
         next: "/resumen",
-        prev: "/monto-venta"
+        prev: "/monto-venta",
+        porcentageProgress:90
+
     },
     {
         path: "/resumen",
@@ -148,10 +166,11 @@ export const Paths = [
         code: "",
         nameState: "resumen",
         visible: true,
-        descripcion: "Muchas gracias por brindarnos tu información, nos estaremos comunicando contigo para agendar una reunion y poder seguir con el proceso",
+        descripcion: "Muchas gracias por brindarnos tu información, nos estaremos comunicando contigo para agendar una reunion y poder seguir con el proceso, estos fueron los datos diligenciados: ",
         icon: DescriptionOutlinedIcon,
         next: { pathname: "/", fromSales: true },
-        prev: "/monto-venta"
+        prev: "/monto-venta",
+        porcentageProgress:100
     },
 
 ]

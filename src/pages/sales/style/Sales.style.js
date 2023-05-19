@@ -43,7 +43,8 @@ export const WrapperForm = styled.div`
 export const WrapperResume = styled.div`
   grid-column: 4/4;
   grid-row: 1/8;
-  height: 100vh;
+  min-height: 100vh;
+  position: sticky;
   backdrop-filter: blur(10px); 
   box-shadow: rgba(124, 1, 225, 0.2) 0px 0px 10px;
   background-color: rgba(0, 0, 0, 0.1); 
@@ -66,13 +67,13 @@ export const Wrapper = styled.div`
 `
 
 export const TittleResume = styled.div`
-color: #7c01ff;
-font-size: 30px;
-display: flex;
-align-items: center;
-justify-content: flex-start;
-font-weight: 300;
-justify-content: center;
+  color: #7c01ff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 300;
+  justify-content: center;
 `
 
 

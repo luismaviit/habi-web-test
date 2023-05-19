@@ -55,7 +55,7 @@ function Uploadimg({ data }) {
           </div>
         </WrapperInputFormImg>
       </WrapperInputForm>
-      <ButtonStepper active={!error} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={!error} next={data.next} />
     </WrapperForm>
   );
 }

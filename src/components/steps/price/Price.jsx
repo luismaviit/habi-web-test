@@ -29,7 +29,7 @@ function Price({ data }) {
         <InputForm onChange={validation} type="number"/>
         {error ? "Precio proyectado correcto, puedes continuar" : "El precio proyectado no puede ser menor a 1 millón de pesos"}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} value={price}/>
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={error} next={data.next} value={price}/>
     </WrapperForm>
   );
 }

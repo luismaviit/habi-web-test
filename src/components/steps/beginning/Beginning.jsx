@@ -29,7 +29,7 @@ function Beginning({ data }) {
       </TittleForm>
       <ContentForm>{data.descripcion}</ContentForm>
       <WrapperInputForm>
-        {perks.map((perk, index) => (
+        {perks.map((data, index) => (
           <WrapperSwitch key={index}>
             <StyledSwitch>
               <label className="switch" htmlFor={`checkbox-${index}`}>
@@ -45,7 +45,7 @@ function Beginning({ data }) {
           </WrapperSwitch>
         ))}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={error} next={data.next} />
     </WrapperForm>
   );
 }

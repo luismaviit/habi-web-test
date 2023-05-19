@@ -30,7 +30,7 @@ function Address({ data }) {
         <InputForm onChange={validation} type="email"/>
         {error ? "Dirección correcta, puedes continuar" : "Dirección inválida"}
       </WrapperInputForm>
-      <ButtonStepper active={error} next={data.next} />
+      <ButtonStepper porcentageProgress={data.porcentageProgress} active={error} next={data.next} />
     </WrapperForm>
   );
 }
